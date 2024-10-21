@@ -2,7 +2,6 @@
     <div class="buy-view">
         <div class="buy-container">
             <h2>{{ msg }}</h2>
-
             <form class="row g-3 buy-form">
                 <div class="col-12">
                     <select class="form-select">
@@ -11,7 +10,6 @@
                         <option value="option2">Option 2</option>
                     </select>
                 </div>
-
                 <div class="col-6">
                     <span>{{ previousCurrency }}</span>
                     <input type="text" placeholder="Input 1" class="form-control" />

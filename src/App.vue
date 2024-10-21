@@ -1,6 +1,8 @@
 <template>
   <NavBar></NavBar>
-  <router-view/>
+  <div class="home">
+    <router-view/>
+  </div>
 </template>
 
 <script>
@@ -20,5 +22,13 @@ export default{
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;
 }
 </style>

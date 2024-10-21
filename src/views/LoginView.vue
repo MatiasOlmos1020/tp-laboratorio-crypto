@@ -1,36 +1,26 @@
 <template>
-  <div class="home">
-    <div class="login-container">
-      <img alt="app-logo" src="../assets/icon.jpg" class="logo">
+  <div class="login-container">
+    <img alt="app-logo" src="../assets/icon.jpg" class="logo">
 
-      <h2>Login</h2>
+    <h2>Login</h2>
 
-      <form class="login-form">
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" required />
-        </div>
+    <form class="login-form">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+      </div>
 
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" required />
-        </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+      </div>
 
-        <button type="submit" class="login-button">Login</button>
-      </form>
-    </div>
+      <button type="submit" class="login-button">Login</button>
+    </form>
   </div>
 </template>
 
 <style scoped>
-.home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f4f4f9;
-}
-
 .login-container {
   width: 320px;
   padding: 20px;
