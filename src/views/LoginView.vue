@@ -1,24 +1,55 @@
 <template>
   <div class="login-container">
     <img alt="app-logo" src="../assets/icon.jpg" class="logo">
-
     <h2>Login</h2>
-
-    <form class="login-form">
+    <form @submit.prevent="handleSubmit" class="login-form"> 
       <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" required />
+        <label>Email</label>
+        <input v-model="email" type="email" placeholder="Ingresa tu direccion de correo" required />
       </div>
 
       <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" required />
+        <label>Password</label>
+        <input v-model="password" type="password" placeholder=" " required />
       </div>
 
       <button type="submit" class="login-button">Login</button>
     </form>
   </div>
 </template>
+
+<script>
+import { useAuthStore } from '@/store';
+
+export default {
+  data(){
+    return{
+      email: "",
+      password: "",
+    }
+  },
+  methods:{
+    async handleSubmit() {
+      const hash = await this.generateHash();
+      const authStore = useAuthStore();
+      authStore.setHash(hash);
+      this.$router.push('/transactions/buy')
+    },
+    async generateHash() {
+      // Uso el pass y el user para generar una clave que es la que voy a usar en la API
+      const encoder = new TextEncoder();
+      const seed = this.password + this.email;
+      const data = encoder.encode(seed);
+
+      return crypto.subtle.digest('SHA-256', data).then(hashBuffer => {
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        return hashHex.substring(0, 16);
+      });
+    }
+  }
+}
+</script>
 
 <style scoped>
 .login-container {

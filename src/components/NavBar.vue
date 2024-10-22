@@ -1,9 +1,8 @@
 <template>
   <nav class="navbar">
     <div class="nav-container">
-      <router-link to="/home" class="nav-item">Home</router-link>
-      <router-link to="/about" class="nav-item">About</router-link>
-      <router-link to="/transactions" class="nav-item">Transactions</router-link>
+      <router-link to="/transactions/buy" class="nav-item">Compre Cryptos</router-link>
+      <router-link to="/transactions/sell" class="nav-item">Venda Cryptos</router-link>
     </div>
   </nav>
 </template>

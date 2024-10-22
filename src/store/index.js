@@ -1,14 +1,13 @@
-import { createStore } from 'vuex'
+// src/stores/authStore.js
+import { defineStore } from 'pinia';
 
-export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
+export const useAuthStore = defineStore('auth', {
+  state: () => ({
+    hash: '',
+  }),
   actions: {
+    setHash(newHash) {
+      this.hash = newHash;
+    },
   },
-  modules: {
-  }
-})
+});

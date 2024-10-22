@@ -25,12 +25,20 @@
 
 
 <script>
+import { useAuthStore } from '@/store';
+
 export default {
     name: 'TransactionComponent',
     props: {
         msg: String,
         previousCurrency: String,
         resultCurrency: String,
+    },
+    computed: {
+        hash() {
+            const authStore = useAuthStore();
+            return authStore.hash;
+        }
     }
 }
 </script>
