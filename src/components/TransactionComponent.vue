@@ -2,7 +2,7 @@
     <div class="buy-view">
         <div class="buy-container">
             <h2>{{ msg }}</h2>
-            <form class="row g-3 buy-form">
+            <form @submit.prevent="handleCreate" class="row g-3 buy-form">
                 <div class="col-12">
                     <select class="form-select">
                         <option value="" disabled selected>{{ msg }}</option>
@@ -18,6 +18,7 @@
                     <span>{{ resultCurrency }}</span>
                     <input type="text" placeholder="Input 2" class="form-control" />
                 </div>
+                <button type="submit"> comprar</button>
             </form>
         </div>
     </div>
@@ -26,6 +27,7 @@
 
 <script>
 import { useAuthStore } from '@/store';
+import { createTransaction } from '@/services/transactionsService';
 
 export default {
     name: 'TransactionComponent',
@@ -39,7 +41,21 @@ export default {
             const authStore = useAuthStore();
             return authStore.hash;
         }
-    }
+    },
+    methods: {
+        handleCreate() {
+            let data = {
+                "user_id": `${this.hash}`,
+                "action": "purchase",
+                "crypto_code": "usdc",
+                "crypto_amount": "1.01",
+                "money": "165.23",
+                "datetime": "11-07-2021 17:50"
+            }
+            let res = createTransaction(data);
+            console.log(res);
+        }
+    },
 }
 </script>
 
