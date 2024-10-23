@@ -43,16 +43,18 @@ export default {
         }
     },
     methods: {
-        handleCreate() {
+        async handleCreate() {
             let data = {
-                "user_id": `${this.hash}`,
-                "action": "purchase",
-                "crypto_code": "usdc",
-                "crypto_amount": "1.01",
-                "money": "165.23",
-                "datetime": "11-07-2021 17:50"
+                user_id: `${this.hash}`,
+                action: "purchase",
+                cripto_code: "usdc",
+                crypto_amount: "1.01",
+                money: "165.23",
+                datetime: "01-10-2024 17:50"
+
             }
-            let res = createTransaction(data);
+
+            let res = await createTransaction(data);
             console.log(res);
         }
     },

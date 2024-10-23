@@ -9,12 +9,9 @@ const apiClient = axios.create({
 
 export const createTransaction = async (data) => {
     try{
-        console.log(data);
-        const response = await apiClient.post('/transactions',data);
+        const response = await apiClient.post(`/transactions`,data);
         return response.data;
     }catch (error){
-        console.log(data);
-        console.error('error en la creacion de la transaccion: ', error);
         return error.response;
     }
 };

@@ -15,6 +15,7 @@ const routes = [
     component: TransactionsLayout,
     children:[
       {
+        name: 'buy',
         path: '/transactions/buy',
         component: BuyView
       },
