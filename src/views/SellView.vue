@@ -1,5 +1,6 @@
 <template>
-    <TransactionComponent msg="Vender Criptos" previous-currency="USDT" result-currency="ARS"></TransactionComponent>
+      <TransactionComponent msg="vender Criptos" transaction-type="sale"></TransactionComponent>
+
   </template>
   
   <script>

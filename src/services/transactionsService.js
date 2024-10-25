@@ -1,11 +1,5 @@
-import axios from "axios";
 
-const apiClient = axios.create({
-    baseURL:process.env.VUE_APP_LABO_3_API_URL,
-    headers: {
-        'x-apikey': `${process.env.VUE_APP_APIKEY}`
-    }
-})
+import { apiClient } from "@/client";
 
 export const createTransaction = async (data) => {
     try{
@@ -15,3 +9,12 @@ export const createTransaction = async (data) => {
         return error.response;
     }
 };
+
+export const getAllUserTransactions = async (userId) => {
+    try{
+        const response = await apiClient.get(`/transactions?q={"user_id":"${userId}"}`);
+        return response.data;
+    }catch (error){
+        return error.response;
+    }
+}
