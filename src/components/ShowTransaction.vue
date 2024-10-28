@@ -12,7 +12,9 @@
                 <p class="value">{{ cryptoValue }}</p>
             </div>
         </div>
-        <button class="crud-button">Gestionar CRUD</button>
+        <router-link :to="'/transactions/edit/' + transactionId" class="nav-item">
+            <button class="crud-button">Gestionar CRUD</button>
+        </router-link>
     </div>
 </template>
 
@@ -28,6 +30,7 @@ export default {
         cryptoName: String,
         fiatValue: Number,
         cryptoValue: Number,
+        transactionId: String
     }
 }
 </script>

@@ -33,7 +33,7 @@ export default {
       const hash = await this.generateHash();
       const authStore = useAuthStore();
       authStore.setHash(hash);
-      this.$router.push('/transactions/buy')
+      this.$router.push('/transactions/purchase')
     },
     async generateHash() {
       // Uso el pass y el user para generar una clave que es la que voy a usar en la API

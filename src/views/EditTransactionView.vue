@@ -41,10 +41,10 @@
 import { useAuthStore } from '@/store';
 import { createTransaction } from '@/services/transactionsService';
 import { getCriptoValue } from '@/services/cryptoService';
-import InputComponent from './InputComponent.vue';
+import InputComponent from '@/components/InputComponent.vue';
 
 export default {
-    name: 'TransactionComponent',
+    name: 'EditTransaction',
     data() {
         return {
             crypto: "USDC",

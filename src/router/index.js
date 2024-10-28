@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '@/views/LoginView.vue'
 import TransactionsLayout from '@/Layouts/TransactionsLayout.vue'
-import BuyView from '@/views/BuyView.vue'
-import SellView from '@/views/SellView.vue'
+import PurchaseView from '@/views/PurchaseView.vue'
+import SaleView from '@/views/SaleView.vue'
+import HistoryView from '@/views/HistoryView.vue'
+import EditTransaction from '@/views/EditTransactionView.vue'
 
 const routes = [
   {
@@ -15,16 +17,25 @@ const routes = [
     component: TransactionsLayout,
     children:[
       {
-        name: 'buy',
-        path: '/transactions/buy',
-        component: BuyView
+        name: 'Purchase',
+        path: '/transactions/purchase',
+        component: PurchaseView
       },
       {
-        path: '/transactions/sell',
-        component: SellView
-      }
+        path: '/transactions/sale',
+        component: SaleView
+      },
+      {
+        path: '/transactions/edit/:id',
+        component: EditTransaction
+      },
     ] 
   },
+  {
+    path: '/history',
+    component: HistoryView
+  },
+  
 ]
 
 const router = createRouter({

@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import TransactionComponent from '@/components/TransactionComponent.vue';
+import TransactionComponent from '@/components/CreateTransactionComponent.vue';
 
 export default {
-  name: "BuyView",
+  name: "PurchaseView",
   components: {
     TransactionComponent,
   }

@@ -4,10 +4,10 @@
   </template>
   
   <script>
-  import TransactionComponent from '@/components/TransactionComponent.vue';
+  import TransactionComponent from '@/components/CreateTransactionComponent.vue';
   
   export default {
-    name: "SellView",
+    name: "SaleView",
     components: {
       TransactionComponent,
     }

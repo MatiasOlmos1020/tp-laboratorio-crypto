@@ -1,9 +1,10 @@
 <template>
     <div class="container">
         <div class="row">
-            <div v-for="(transaction, index) in transactions" :key="index">
+            <div v-for="transaction in transactions" :key="transaction._id">
                 <ShowTransaction :transactionType="transaction.action" :cryptoName="transaction.crypto_code"
-                    :cryptoValue="transaction.crypto_amount" :fiatValue="transaction.money"></ShowTransaction>
+                    :cryptoValue="transaction.crypto_amount" :fiatValue="transaction.money" :transactionId="transaction._id"></ShowTransaction>
+                <p>{{ transaction._id }}</p>
             </div>
         </div>
     </div>
@@ -28,6 +29,7 @@ export default {
     },
     async mounted() {
         this.transactions = await getAllUserTransactions(this.hash)
+        console.log(this.transactions)
     },
     components: {
         ShowTransaction

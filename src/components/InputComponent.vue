@@ -10,7 +10,7 @@
 export default {
     props: {
         modelValue: {
-            type: [String, Number],
+            type: Number,
             required: true
         },
         placeholder: {
