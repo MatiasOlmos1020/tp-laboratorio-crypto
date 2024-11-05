@@ -1,25 +1,25 @@
 <template>
-  <div class="login-container">
-    <img alt="app-logo" src="../assets/icon.jpg" class="logo">
-    <h2>Login</h2>
-    <form @submit.prevent="handleSubmit" class="login-form"> 
-      <div class="form-group">
-        <label>Email</label>
-        <input v-model="email" type="email" placeholder="Ingresa tu direccion de correo" required />
-      </div>
-
-      <div class="form-group">
-        <label>Password</label>
-        <input v-model="password" type="password" placeholder=" " required />
-      </div>
-
-      <button type="submit" class="login-button">Login</button>
-    </form>
+  <div class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+    <div class="card p-4 shadow-sm" style="width: 320px;">
+      <img alt="app-logo" src="../assets/icon.jpg" class="card-img-top mx-auto" style="width: 100px;">
+      <h2 class="text-center mt-3">Login</h2>
+      <form @submit.prevent="handleSubmit">
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input v-model="email" type="email" class="form-control" placeholder="Ingresa tu direccion de correo" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input v-model="password" type="password" class="form-control" placeholder=" " required />
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Login</button>
+      </form>
+    </div>
   </div>
 </template>
 
 <script>
-import { useAuthStore } from '@/store';
+import { useAuthStore } from '@/store/useAuthStore';
 
 export default {
   data(){
@@ -50,64 +50,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.login-container {
-  width: 320px;
-  padding: 20px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.logo {
-  width: 100px;
-  margin-bottom: 20px;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group {
-  margin-bottom: 15px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 5px;
-  text-align: left;
-  color: #333;
-}
-
-.form-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-  outline: none;
-}
-
-.form-group input:focus {
-  border-color: #5b9fff;
-}
-
-.login-button {
-  padding: 10px;
-  background-color: #5b9fff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.login-button:hover {
-  background-color: #3a7ddd;
-}
-</style>

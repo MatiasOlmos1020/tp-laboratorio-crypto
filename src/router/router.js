@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import LoginView from '@/views/LoginView.vue'
 import TransactionsLayout from '@/Layouts/TransactionsLayout.vue'
-import PurchaseView from '@/views/PurchaseView.vue'
-import SaleView from '@/views/SaleView.vue'
+import PurchaseView from '@/views/transaction/PurchaseView.vue'
+import SaleView from '@/views/transaction/SaleView.vue'
 import HistoryView from '@/views/HistoryView.vue'
-import EditTransaction from '@/views/EditTransactionView.vue'
+import EditTransaction from '@/views/transaction/EditTransactionView.vue'
 
 const routes = [
   {
