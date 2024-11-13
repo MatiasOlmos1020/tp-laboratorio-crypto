@@ -22,16 +22,19 @@ const routes = [
         component: PurchaseView
       },
       {
+        name: 'Sale',
         path: '/transactions/sale',
         component: SaleView
       },
       {
+        name: 'EditTransaction',
         path: '/transactions/edit/:id',
         component: EditTransaction
       },
     ] 
   },
   {
+    name: 'History',
     path: '/history',
     component: HistoryView
   },

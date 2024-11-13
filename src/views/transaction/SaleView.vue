@@ -1,10 +1,10 @@
 <template>
-      <TransactionComponent msg="vender Criptos" transaction-type="sale"></TransactionComponent>
+      <TransactionComponent msg="vender Criptos" transaction-type="sale" action="create"></TransactionComponent>
 
   </template>
   
   <script>
-  import TransactionComponent from '@/components/CreateTransactionComponent.vue';
+  import TransactionComponent from '@/components/TransactionComponent.vue';
   
   export default {
     name: "SaleView",

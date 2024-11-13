@@ -1,9 +1,9 @@
 <template>
-  <TransactionComponent msg="Comprar Criptos" transaction-type="purchase"></TransactionComponent>
+  <TransactionComponent msg="Comprar Criptos" transaction-type="purchase" action="create"></TransactionComponent>
 </template>
 
 <script>
-import TransactionComponent from '@/components/CreateTransactionComponent.vue';
+import TransactionComponent from '@/components/TransactionComponent.vue';
 
 export default {
   name: "PurchaseView",
