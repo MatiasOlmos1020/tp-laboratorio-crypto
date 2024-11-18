@@ -2,10 +2,16 @@
     <div class="container my-4 mt-5">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8 mb-4">
-                <div class="card shadow-sm">
+                <div class="card shadow-sm mt-5">
                     <div class="card-body">
                         <h5 class="text-primary text-center">Estado Actual</h5>
                         <CurrentStateComponent v-if="transactions" :data="transactions" />
+                    </div>
+                </div>
+                <div class="card shadow-sm mt-5">
+                    <div class="card-body">
+                        <h5 class="text-primary text-center">Analisis de Inversiones</h5>
+                        <AnalisisComponent v-if="transactions" :data="transactions" />
                     </div>
                 </div>
             </div>
@@ -23,6 +29,7 @@
 </template>
 
 <script>
+import AnalisisComponent from "@/components/AnalisisComponent.vue";
 import CurrentStateComponent from "@/components/CurrentStateComponent.vue";
 import ShowTransaction from "@/components/ShowTransaction.vue";
 import { getAllUserTransactions } from "@/services/transactionsService";
@@ -50,6 +57,7 @@ export default {
     components: {
         ShowTransaction,
         CurrentStateComponent,
+        AnalisisComponent,
     },
 };
 </script>

@@ -24,9 +24,8 @@ export const getCryptoValues = async (cryptoNames, fiatValue) => {
             })
         );
         responses.forEach(({ crypto, value }) => {
-            cryptoValues[crypto] = parseFloat(value.price);
+            cryptoValues[crypto] = parseFloat(value.totalBid);
         });
-
         return cryptoValues;
     } catch (error) {
         return error.response;

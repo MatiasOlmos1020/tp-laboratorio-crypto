@@ -1,14 +1,14 @@
 <template>
-    <div class="accordion col-12" id="mainAccordion">
+    <div class="accordion col-12" id="currentStateAcordion">
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#currentState"
+                    aria-expanded="true" aria-controls="currentState">
                     Estado Actual
                 </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                data-bs-parent="#mainAccordion">
+            <div id="currentState" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                data-bs-parent="#currentStateAcordion">
                 <div class="accordion-body">
                     <div v-if="!currentState">
                         <p class="text-center text-muted">Cargando datos...</p>
@@ -49,7 +49,7 @@ export default {
     name: "CurrentState",
     data() {
         return {
-            currentState: null,
+            currentState : { cryptoTotals: {}, totalMoney: 0 }
         };
     },
     props: {
@@ -95,10 +95,6 @@ export default {
         },
     },
     async created() {
-        if (!this.data || this.data.length === 0) {
-            this.currentState = { cryptoTotals: {}, totalMoney: 0 };
-            return;
-        }
         const exchangeRates = await this.exchangeRates();
         this.currentState = this.calculateCurrentState(this.data, exchangeRates);
     },
