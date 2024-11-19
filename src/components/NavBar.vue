@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar">
     <div class="nav-container">
+      <router-link to="/history" class="nav-item">Historial</router-link>
       <router-link to="/transactions/purchase" class="nav-item">Compre Cryptos</router-link>
       <router-link to="/transactions/sale" class="nav-item">Venda Cryptos</router-link>
-      <router-link to="/history" class="nav-item">Historial</router-link>
 
     </div>
   </nav>

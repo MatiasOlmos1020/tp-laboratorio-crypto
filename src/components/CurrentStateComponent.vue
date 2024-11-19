@@ -83,7 +83,7 @@ export default {
             });
 
             for (const code in cryptoTotals) {
-                cryptoTotals[code].currentValue = cryptoTotals[code].totalAmount * (exchangeRates[code] || 0);
+                cryptoTotals[code].currentValue = cryptoTotals[code].totalAmount * exchangeRates[code];
             }
 
             return { cryptoTotals, totalMoney };
